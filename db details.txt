@@ -1,0 +1,44 @@
+user name : chandus1603 
+password : zXUHNPJRj9Ur3Fgt
+Install Driver :npm install mongodb
+connection String : mongodb+srv://chandus1603:zXUHNPJRj9Ur3Fgt@achiversdb.gc6cr.mongodb.net/?retryWrites=true&w=majority&appName=AchiversDB
+
+
+
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://chandus1603:zXUHNPJRj9Ur3Fgt@achiversdb.gc6cr.mongodb.net/?retryWrites=true&w=majority&appName=AchiversDB";
+
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
+});
+
+async function run() {
+  try {
+    // Connect the client to the server	(optional starting in v4.7)
+    await client.connect();
+    // Send a ping to confirm a successful connection
+    await client.db("admin").command({ ping: 1 });
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+}
+run().catch(console.dir);
+
+
+mongodb+srv://chandus1603:zXUHNPJRj9Ur3Fgt@achiversdb.gc6cr.mongodb.net/?retryWrites=true&w=majority&appName=AchiversDB
+mongodb+srv://chandus1603:<db_password>@achiversdb.gc6cr.mongodb.net/
+
+const mongoURI = 'mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/<database-name>?retryWrites=true&w=majority';
+https://cloud.mongodb.com/v2/66d929417195892301ad590a#/security/network/accessList ---> IP whitelisting
+
+
+https://docs.expo.dev/tutorial/create-your-first-app/ --> guide for expo 
+
+1. npx create-expo-app Achivers --template blank    ---> create app 
