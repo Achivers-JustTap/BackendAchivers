@@ -41,8 +41,8 @@ app.post('/signup/signup', async (req, res) => {
 
   await client.messages.create({
     body: `Your OTP verification for user is ${OTP}`,
-    from: '14017534626',
-    to: "+917981124094" // Replace with your test phone number
+    from: 'YOUR_TWILIO_NUMBER',
+    to: "YOUR_NUMBER" // Replace with your test phone number
   }).then(() => {
     res.status(200).json({
       msg: "Message sent"
