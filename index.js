@@ -5,8 +5,8 @@ const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const Captain = require('./models/captainsmodel')
 
-const accountSid = 'YOUR_TWILIO_ACCOUNT_SID';
-const authToken = 'YOUR_TWILIO_AUTH_TOKEN';
+const accountSid = 'AC9c89a4b015beb87b66207280496a8c8d';
+const authToken = 'f0c8cb107fecae1128cd579869b2fceb';
 const client = require('twilio')(accountSid, authToken);
 
 const app = express();
@@ -41,8 +41,8 @@ app.post('/signup/signup', async (req, res) => {
 
   await client.messages.create({
     body: `Your OTP verification for user is ${OTP}`,
-    from: 'YOUR_TWILIO_NUMBER',
-    to: "YOUR_NUMBER" // Replace with your test phone number
+    from: '14017534626',
+    to: "+917981124094" // Replace with your test phone number
   }).then(() => {
     res.status(200).json({
       msg: "Message sent"
